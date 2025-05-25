@@ -273,9 +273,7 @@
 }
 
 .button__container {
-  background: var(--themes-backgroud-color);
   width: 100%;
-  display: flex;
   justify-content: center;
   background: transparent;
   display: inline-flex;
