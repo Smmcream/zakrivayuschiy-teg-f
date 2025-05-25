@@ -450,6 +450,26 @@ dialog::backdrop {
   filter: hue-rotate(0deg) saturate(100%) contrast(100%);
 }
 
+.post__cover:hover .image_moto {
+  filter: brightness(100%) contrast(100%) saturate(100%);
+}
+
+.post__cover:hover .image_flowers {
+  filter: brightness(100%) saturate(100%) contrast(100%);
+}
+
+.post__cover:hover .image_neongirl {
+  filter: brightness(100%) contrast(100%) hue-rotate(0deg);
+}
+
+.post__cover:hover .image_apples {
+  filter: sepia(0%) brightness(100%) contrast(100%);
+}
+
+.post__cover:hover .image_catalog {
+  filter: brightness(100%) contrast(100%) saturate(100%);
+}
+
 @media (width <= 375px) {
   .page {
     padding: 0px;
