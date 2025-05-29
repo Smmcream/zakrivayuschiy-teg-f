@@ -10,40 +10,6 @@
 
 */
 
-@keyframes choose {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(50%);
-  }
-}
-
-@keyframes like-zoom {
-  0% {
-    scale: 1;
-  }
-
-  95% {
-    scale: 1.5;
-  }
-
-  100% {
-    scale: 1;
-  }
-}
-
-@keyframes like-sparks {
-  from {
-    fill: transparent;
-  }
-
-  to {
-    fill: var(--themes-animation-color);
-  }
-}
-
 @keyframes heart-scale {
   from {
     transform: scale(1);
@@ -71,14 +37,14 @@ css
 
 /* Основное тело сердца */
 .like-icon .main-body {
-  fill: none;
-  transition: fill 0.3s 0.05s;
+  fill: transparent;
+  transition: fill 0.3s;
 }
 
 /* Сердцевина */
 .like-icon .core {
-  fill: none;
-  transition: fill 0.3s;
+  fill: transparent;
+  transition: fill 0.3s 0.05s;
 }
 
 /* Состояние при наведении */
