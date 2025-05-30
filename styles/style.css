@@ -17,22 +17,21 @@
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 100px;
-  padding: clamp(128px, calc(50px + 20 * (100vw - 375px) / 1065), 70px) 0;
-  border: 2px solid var(--themes-main-color);
-  font-family: var(--font-accent);
-  background-color: var(--themes-backgroud-color);
-  width: 100%;
-  max-width: var(--desktop-content-width);
+.header { 
+  display: flex; 
+  flex-direction: column; 
+  place-items: center; 
+  justify-content: center; 
+  gap: 25px; 
+  margin-bottom: 100px; 
+  padding: clamp(128px, calc(50px + 20 * (100vw - 375px) / 1065), 70px) 0; 
+  border: 2px solid var(--themes-main-color); 
+  font-family: var(--font-accent); 
+  background-color: var(--themes-background-color); 
+  width: 100%; 
+  max-width: var(--desktop-content-width); 
 }
 
 .header__logo {
@@ -40,12 +39,16 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
   font-weight: 400;
+  width: 100%;
+  text-align: center;
 }
 
 .header__description {
@@ -66,7 +69,7 @@
 
 .post {
   border: 2px solid var(--themes-main-color);
-  background-color: var(--themes-backgroud-color);
+  background-color: var(--themes-background-color);
   max-width: var(--desktop-card-width);
   display: flex;
   flex-direction: column;
@@ -99,13 +102,6 @@
   height: 100%;
 }
 
-@supports (-webkit-text-stroke: 1px var(--text-stroke-color)) or (text-stroke: 1px var(--text-stroke-color)) {
-  .post__cover__watermark {
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-    text-stroke: 1px var(--text-stroke-color);
-  }
-}
-
 .post__cover__watermark {
   position: absolute;
   top: 25px;
@@ -117,6 +113,15 @@
   font-size: 14px;
   line-height: normal;
   mix-blend-mode: hard-light;
+  text-shadow: 0 0 1px var(--themes-background-color);
+}
+
+@supports ((text-stroke: 1px var(--themes-background-color)) or (-webkit-text-stroke: 1px var(--themes-background-color))) {
+  .post__cover__watermark {
+    -webkit-text-stroke: 1px var(--themes-background-color);
+    text-stroke: 1px var(--themes-background-color);
+    text-shadow: none;
+  }
 }
 
 .post__content {
@@ -206,13 +211,13 @@
 }
 
 .button {
-  --text-color: white;
-  --bg-color: white;
   position: relative;
   border: 2px solid var(--themes-main-color);
-  background: var(--bg-color);
+  background: var(--themes-background-color);
+  color: var(--themes-button-text-color);
   isolation: isolate;
   overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
 .button:focus-visible {
@@ -234,7 +239,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
-  color: var(--text-color);
+  color: var(--themes-button-text-color);
   mix-blend-mode: difference;
 }
 
@@ -273,7 +278,7 @@ dialog::backdrop {
   min-width: 341px;
   border: 2px solid var(--themes-main-color);
   padding: 30px;
-  background: var(--themes-backgroud-color);
+  background: var(--themes-background-color);
   position: fixed;
   left: 50%;
   top: 50%;
@@ -380,6 +385,11 @@ dialog::backdrop {
 
   .header {
     padding: 120px 0;
+    padding-inline: 0;
+  }
+
+  .header__title {
+    padding-inline: 14px;
   }
   
   .footer__button {
